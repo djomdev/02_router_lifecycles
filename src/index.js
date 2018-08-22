@@ -8,6 +8,7 @@ import Home from './components/home';
 import Posts from './components/posts';
 import Profile from './components/profile';
 import PostItem from './components/post_item';
+import Life from './components/lifecycles';
 
 
 // HashRouter MemoryRouter
@@ -30,7 +31,8 @@ const App = () => {
                         pathname:'profile',
                         // hash: '#francis',
                         // search: '?profile=true'
-                    }}>Profile</NavLink>
+                    }}>Profile</NavLink><br/>
+                    <NavLink to="/life">Life</NavLink>
                     <hr/>
                 </header>
                 <Switch>
@@ -39,6 +41,7 @@ const App = () => {
                     <Route path="/profile" component={Profile} /> 
                     <Route path="/posts" component={Posts} />
                     <Route path="/" exact component={Home} />
+                    <Route path="/life" component={Life} />
                     <Route render={() => <h3>Oops 404</h3>}/>
                 </Switch>
    

@@ -1,6 +1,6 @@
 import React from 'react';
 import ReactDom from 'react-dom';
-import { BrowserRouter, Route, Link } from 'react-router-dom';
+import { BrowserRouter, Route, Link, NavLink } from 'react-router-dom';
 
 // COMPONENTS
 
@@ -10,7 +10,7 @@ import Profile from './components/profile';
 import PostItem from './components/post_item';
 
 
-
+// HashRouter MemoryRouter
 // myawesomeapp.com/posts
 // myawesomeapp.com/profile/posts
 
@@ -20,13 +20,17 @@ const App = () => {
         <BrowserRouter>
             <div>
                 <header>
-                    <Link to="/">Home</Link><br/>
-                    <Link to="/posts">Posts</Link><br/>
-                    <Link to={{
+                    <NavLink to="/">Home</NavLink><br/>
+                    <NavLink 
+                    to="/posts"
+                    activeStyle={{color:'red'}}
+                    activeClassName="selected"
+                    >Posts</NavLink><br/>
+                    <NavLink to={{
                         pathname:'profile',
                         // hash: '#francis',
                         // search: '?profile=true'
-                    }}>Profile</Link>
+                    }}>Profile</NavLink>
                     <hr/>
                 </header>
                 <Route path="/" exact component={Home}/>
@@ -35,7 +39,7 @@ const App = () => {
                 <Route path="/profile" component={Profile} />    
             </div>
         </BrowserRouter>
-    )
+    ) 
 }
 
 

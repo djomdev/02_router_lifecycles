@@ -1,6 +1,6 @@
 import React from 'react';
 import ReactDom from 'react-dom';
-import { BrowserRouter, Route, Link, NavLink, Switch } from 'react-router-dom';
+import { BrowserRouter, Route, NavLink, Switch } from 'react-router-dom';
 
 // COMPONENTS
 
@@ -9,11 +9,13 @@ import Posts from './components/posts';
 import Profile from './components/profile';
 import PostItem from './components/post_item';
 import Life from './components/lifecycles';
+import Conditional from './components/conditional';
 
 
 // HashRouter MemoryRouter
 // myawesomeapp.com/posts
 // myawesomeapp.com/profile/posts
+
 
 
 const App = () => {
@@ -32,7 +34,8 @@ const App = () => {
                         // hash: '#francis',
                         // search: '?profile=true'
                     }}>Profile</NavLink><br/>
-                    <NavLink to="/life">Life</NavLink>
+                    <NavLink to="/life">Life</NavLink><br/>
+                    <NavLink to="/conditional">Conditional</NavLink>
                     <hr/>
                 </header>
                 <Switch>
@@ -42,6 +45,7 @@ const App = () => {
                     <Route path="/posts" component={Posts} />
                     <Route path="/" exact component={Home} />
                     <Route path="/life" component={Life} />
+                    <Route path="/conditional" component={Conditional} />
                     <Route render={() => <h3>Oops 404</h3>}/>
                 </Switch>
    

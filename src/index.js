@@ -7,8 +7,8 @@ import { BrowserRouter, Route, Link } from 'react-router-dom';
 import Home from './components/home';
 import Posts from './components/posts';
 import Profile from './components/profile';
-// import Life from './components/lifecycles';
-// import Conditional from './components/conditional';
+import PostItem from './components/post_item';
+
 
 
 // myawesomeapp.com/posts
@@ -30,10 +30,9 @@ const App = () => {
                     <hr/>
                 </header>
                 <Route path="/" exact component={Home}/>
-                <Route path="/posts" component={Posts} />
-                <Route path="/profile" component={Profile} />
-                {/* <Route path="/lifecycles" component={Life} />
-                <Route path="/conditional" component={Conditional} /> */}
+                <Route path="/posts" exact component={Posts} />
+                <Route path="/posts/:id/:username" component={PostItem} />
+                <Route path="/profile" component={Profile} />    
             </div>
         </BrowserRouter>
     )

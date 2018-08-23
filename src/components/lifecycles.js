@@ -1,6 +1,6 @@
-import React, { Component } from 'react';
-
-class Life extends Component {
+import React, { PureComponent } from 'react';
+ 
+class Life extends PureComponent {
     // I. get default props
 
     // II. set default state
@@ -12,47 +12,47 @@ class Life extends Component {
 
     // V. after JSX
 
-    componentDidMount() {
-        console.log('V. after RENDER');
-        document.querySelector('h3').style.color = 'red'
-     }
+    // componentDidMount() {
+    //     console.log('V. after RENDER');
+    //     document.querySelector('h3').style.color = 'red'
+    //  }
 
-    // III. refore render
+    // // III. refore render
 
-    componentsWillMount(){
-        console.log('III. refore render');
-    }
+    // componentsWillMount(){
+    //     console.log('III. refore render');
+    // }
 
-    componentWillUpdate(){
-        console.log('BEFORE UPDATE')
-    }
+    // componentWillUpdate(){
+    //     console.log('BEFORE UPDATE')
+    // }
 
-    componentDidUpdate(){
-        console.log('AFTER UPDATE')
-    }
-
-
-    shouldComponentUpdate(nextProps,nextState){
-        console.log(this.state.title)
-        console.log(nextState.title)
-        if (nextState.title === 'something else'){
-            return false
-        }
-
-        return true;    
-    }
-
-
-    // componentWillReceiveProps(){
-    //     console.log('BEFORE RECEIVE PROPS')
+    // componentDidUpdate(){
+    //     console.log('AFTER UPDATE')
     // }
 
 
-    componentWillUnmount(){
-        console.log('UNMOUNT')
-    }
+    // shouldComponentUpdate(nextProps,nextState){
+    //     // console.log(this.state.title)
+    //     // console.log(nextState.title)
+    //     if (nextState.title === this.state.title){
+    //         return false
+    //     }
 
-    // IV. render jxs
+    //     return true;    
+    // }
+
+
+    // // componentWillReceiveProps(){
+    // //     console.log('BEFORE RECEIVE PROPS')
+    // // }
+
+
+    // componentWillUnmount(){
+    //     console.log('UNMOUNT')
+    // }
+
+    // // IV. render jxs
 
     render () {
 

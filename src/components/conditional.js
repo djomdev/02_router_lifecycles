@@ -5,8 +5,8 @@ const Conditional = () => {
     const value = false;
 
     const returnValue = () => {
-        /////
-        return false
+        ///// insert logic here
+        return true
     }
 
     const showIt = () => {

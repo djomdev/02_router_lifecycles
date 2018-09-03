@@ -10,6 +10,7 @@ import Profile from './components/profile';
 import PostItem from './components/post_item';
 import Life from './components/lifecycles';
 import Conditional from './components/conditional';
+import User from './components/user';
 
 
 // HashRouter MemoryRouter
@@ -33,9 +34,10 @@ const App = () => {
                         pathname:'profile',
                         // hash: '#francis',
                         // search: '?profile=true'
-                    }}>Profile</NavLink><br/>
+                    }}>Profile</NavLink><br/> 
                     <NavLink to="/life">Life</NavLink><br/>
-                    <NavLink to="/conditional">Conditional</NavLink>
+                    <NavLink to="/conditional">Conditional</NavLink><br />
+                    <NavLink to="/user">User</NavLink>
                     <hr/>
                 </header>
                 <Switch>
@@ -46,6 +48,7 @@ const App = () => {
                     <Route path="/" exact component={Home} />
                     <Route path="/life" component={Life} />
                     <Route path="/conditional" component={Conditional} />
+                    <Route path="/user" component={User} />
                     <Route render={() => <h3>Oops 404</h3>}/>
                 </Switch>
    
